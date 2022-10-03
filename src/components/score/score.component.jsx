@@ -33,17 +33,18 @@ function Score() {
 
   return (
     <Box m={2} pt={3} >
+      
       <Grid container rowSpacing={2} justifyContent="center">
         {Object.keys(roundPoints).map((round, i) => (
           <>
             <Grid item xs={0} s={3} md={3} key={i + "ph1"}/>
-            <Grid item xs={2} s={2} md={2} key={i + "label"}>
+            <Grid item xs={6} s={2} md={2} key={i + "label"}>
             <Typography sx={{ textAlign: "right", marginRight: 5}}>{i+1}te Runde</Typography>
             </Grid>
-            <Grid item xs={5} s={2} md={2} key={i + "sp1"}>
+            <Grid item xs={3} s={2} md={2} key={i + "sp1"}>
               <Typography sx={{ borderLeft: 1, borderRight: 1, textAlign: "center" }}>{roundPoints[round].spieler1}</Typography>
             </Grid>
-            <Grid item xs={5} s={2} md={2} key={i + "sp2"}>
+            <Grid item xs={3} s={2} md={2} key={i + "sp2"}>
               <Typography sx={{ textAlign: "center" }}>{roundPoints[round].spieler2}</Typography>
             </Grid>
             <Grid item xs={0} s={3} md={3} key={i + "ph2"}/>
@@ -51,17 +52,17 @@ function Score() {
         ))}
 
         <Grid item xs={0} s={3} md={3} />
-        <Grid item xs={2} s={2} md={2} >
+        <Grid item xs={6} s={2} md={2} >
         <Typography noWrap sx={{ fontWeight: 600, paddingTop: 1, textAlign: "right", marginRight: 5 }}>Gesamtscore</Typography>
         </Grid>
-        <Grid item xs={5} s={2} md={2}>
+        <Grid item xs={3} s={2} md={2}>
           <Typography sx={{ fontWeight: 600, paddingTop: 1, borderTop: 1, textAlign: "center" }}>{scoreSpieler1}</Typography>
         </Grid>
-        <Grid item xs={5} s={2} md={2}>
+        <Grid item xs={3} s={2} md={2}>
           <Typography sx={{ fontWeight: 600, paddingTop: 1, borderTop: 1, textAlign: "center" }}>{scoreSpieler2}</Typography>
         </Grid>
         <Grid item xs={0} s={3} md={3} />
-        <Grid marginTop={5} item xs={6} s={2} md={2}>
+        <Grid marginTop={10} item xs={6} s={2} md={2}>
           <TextField
             sx={{input: {textAlign: "center"}}}       
             type="number"
@@ -74,9 +75,9 @@ function Score() {
             variant="standard"
           />
         </Grid>
-        <Grid marginTop={5} item xs={6} s={2} md={2}>
+        <Grid marginTop={10} item xs={6} s={2} md={2}>
           <TextField
-            sx={{ textAlign: "center" }}
+            sx={{input: {textAlign: "center"}}}
             type="number"
             fullWidth
             onChange={(value) => {
@@ -89,7 +90,7 @@ function Score() {
         </Grid>
       </Grid>
       <Typography align="center">
-        <Button onClick={updateScore}>Runde eingeben</Button>
+        <Button sx={{padding: 2}} onClick={updateScore}>Runde eingeben</Button>
       </Typography>
     </Box>
 

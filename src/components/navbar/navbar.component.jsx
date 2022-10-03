@@ -4,8 +4,10 @@ import React from 'react'
 function Navbar(){
     return (
         <AppBar sx={{backgroundColor:'#009688'}} position="static">
-            <Toolbar>
-                <Typography>Romme Zähler</Typography>
+            <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
+                <div />
+                <Typography >Romme Zähler</Typography>
+                <div />
             </Toolbar>
         </AppBar>
     );
